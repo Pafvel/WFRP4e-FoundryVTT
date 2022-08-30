@@ -254,6 +254,7 @@
   } 
 
   .app.sheet .editor-content {
+    margin: -5px 5px 0px 0px;
     padding:0px 5px;
   }
 
@@ -373,10 +374,12 @@
     /* background: blue; */
   }
 
+  .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar,
   .app.window-app .editor ::-webkit-scrollbar {
     width: 10px;
     box-shadow: inset 0 0 
   }
+  .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar-thumb,
   .app.window-app .editor ::-webkit-scrollbar-thumb {
     outline: none;
     border-radius: 3px;
@@ -386,11 +389,13 @@
     border-image-width: 5px;
     border-image-outset: 0px;
   }
+  .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar-button,
   .app.window-app .editor ::-webkit-scrollbar-button {
     background: #782e22;
     height: 23px;
     border: none;
   }
+  .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar-button:start:decrement,
   .app.window-app .editor ::-webkit-scrollbar-button:start:decrement {
     background: url(../ui/scrollbars/sheet-light-scrollbar-button-vertical-decrement.webp) no-repeat;
     box-shadow: none;
@@ -398,6 +403,7 @@
     background-position-y: 0px;
     /* background: red; */
   } 
+  .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar-button:end:increment,
   .app.window-app .editor ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-light-scrollbar-button-vertical-increment.webp) no-repeat;
     background-position-y: 0px;
@@ -405,10 +411,13 @@
     height: 16px;
     /* background: red; */
   }
+  .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar-button:vertical:start:increment,
+  .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar-button:vertical:end:decrement,
   .app.window-app .editor ::-webkit-scrollbar-button:vertical:start:increment,
   .app.window-app .editor ::-webkit-scrollbar-button:vertical:end:decrement {
       display: none;
   }
+  .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar-track,
   .app.window-app .editor ::-webkit-scrollbar-track {
     background: url(../ui/scrollbars/sheet-light-scrollbar-track.webp) repeat-y;
     background-position: center;
@@ -1379,7 +1388,7 @@
     }
 
 /* ==================== (D) SIDEBAR (COMBAT TRACKER) ========== */
-  #combat-popout #combat-round , #sidebar #combat #combat-round {
+  #combat-popout .combat-tracker-header , #sidebar #combat .combat-tracker-header {
     flex: 0 0 64px;
     min-height: 73px;
     max-height: 73px;
@@ -1391,7 +1400,7 @@
     font-weight: 500;
     text-shadow: 0px 0px 1px #00000063;
   }
-    #combat-popout #combat-round .encounters h4 , #sidebar #combat #combat-round .encounters h4 {
+    #combat-popout .combat-tracker-header .encounters h4 , #sidebar #combat .combat-tracker-header .encounters h4 {
       flex: 1;
       margin: 0;
       padding: 0px;
@@ -1404,7 +1413,7 @@
       font-size: 17px;
       font-weight: var(--actor-input-font-weight);
     }
-    #combat-popout #combat-round .encounters h3 , #sidebar #combat #combat-round .encounters h3 {
+    #combat-popout .combat-tracker-header  h3 , #sidebar #combat .combat-tracker-header  h3 {
       flex: 1;
       margin: 0px 30px;
       padding: 0px;
@@ -1420,98 +1429,18 @@
       opacity: 1;
       text-shadow: 1px 1px 5px #000000;
     }
-    #combat-popout #combat-round .encounters h3 {
+    #combat-popout .combat-tracker-header .encounters h3 {
       font-size: 19px;
     }
-    #combat-popout #combat-round .combat-cycle , #sidebar #combat #combat-round .combat-cycle {
+    #combat-popout .combat-tracker-header .combat-cycle , #sidebar #combat .combat-tracker-header .combat-cycle {
       padding: 0px;
       margin: 0px;
       width: 30px;
       height: 30px;
-      color: #00ffff00;
       text-shadow: none;
       position: relative;
       top: 0px;
-      background: url(../ui/buttons/combat-button-previous-encounter.webp);
     }
-    #combat-popout #combat-round a[title="Activate Next Encounter"] , #sidebar #combat #combat-round a[title="Activate Next Encounter"] {
-      padding: 0px;
-      margin: 0px;
-      width: 30px;
-      height: 30px;
-      color: #00ffff00;
-      text-shadow: none;
-      position: relative;
-      top: 0px;
-      background: url(../ui/buttons/combat-button-next-encounter.webp);
-    }
-    #combat-popout #combat-round .combat-control , #sidebar #combat #combat-round .combat-control {
-      padding: 0px;
-      margin: 0px;
-      width: 30px;
-      height: 30px;
-      color: #00ffff00;
-      text-shadow: none;
-      position: relative;
-      top: 0px;
-      background: url(../ui/buttons/combat-button-reset-initiative.webp);
-    }
-    #combat-popout #combat-round .combat-settings , #sidebar #combat #combat-round .combat-settings {
-      padding: 0px;
-      margin: 0px;
-      width: 30px;
-      height: 30px;
-      color: #00ffff00;
-      text-shadow: none;
-      position: relative;
-      top: 0px;
-      background: url(../ui/buttons/combat-button-tracker-settings.webp);
-    }
-    #combat-popout #combat-round a[title="Create Encounter"] , #sidebar #combat #combat-round a[title="Create Encounter"] {
-      padding: 0px;
-      margin: 0px;
-      width: 30px;
-      height: 30px;
-      color: #00ffff00;
-      text-shadow: none;
-      position: relative;
-      top: 2px;
-      background: url(../ui/buttons/combat-button-create-encounter.webp);
-    }
-    #combat-popout #combat-round a[title="Roll NPCs"] , #sidebar #combat #combat-round a[title="Roll NPCs"] {
-      padding: 0px;
-      margin: 0px;
-      width: 30px;
-      height: 30px;
-      color: #00ffff00;
-      text-shadow: none;
-      position: relative;
-      top: 2px;
-      background: url(../ui/buttons/combat-button-roll-npcs.webp);
-    }
-    #combat-popout #combat-round a[title="Roll All"] , #sidebar #combat #combat-round a[title="Roll All"] {
-      padding: 0px;
-      margin: 0px;
-      width: 30px;
-      height: 30px;
-      color: #00ffff00;
-      text-shadow: none;
-      position: relative;
-      top: 2px;
-      background: url(../ui/buttons/combat-button-roll-all.webp);
-    }
-    #combat-popout #combat-round a[title="Delete Encounter"] , #sidebar #combat #combat-round a[title="Delete Encounter"] {
-      padding: 0px;
-      margin: 0px;
-      width: 30px;
-      height: 30px;
-      color: #00ffff00;
-      text-shadow: none;
-      position: relative;
-      top: 2px;
-      background: url(../ui/buttons/combat-button-delete-encounter.webp);
-    }
-
   #combat .advantage-groups {
     display : flex;
     flex: unset;
@@ -1608,7 +1537,7 @@
     box-shadow: 0 0 5px #ff9f00 !important;
   }
   #combat-popout #combat-controls .combat-control i , #sidebar #combat #combat-controls .combat-control i {
-    display: contents;
+    /* display: contents; */
     color: #d0d0d0;
   }
     #combat-popout #combat-controls a[title="End Combat"] , #sidebar #combat #combat-controls a[title="End Combat"] {
@@ -11564,8 +11493,8 @@ border-image-outset: 0px !important;
       border-image-width: 162px 81px 67px 80px;
       border-image-outset: 0px;
       background: none;
-      height: 802px !important;
-      width: 800px !important;
+      min-height: 802px;
+      min-width: 940px;
       box-shadow: none;
     }
     #client-settings .window-header {
@@ -12637,12 +12566,12 @@ font-family: var(--actor-input-font-family);
       line-height: 32px;
       justify-content: space-around;
     }
-    .card-config .sheet-tabs .item,
-    .cards-config .sheet-tabs .item,
-    .scene-sheet .sheet-tabs .item,
-    .active-effect-sheet .sheet-tabs .item,
-    .active-effect-sheet .sheet-tabs .item,
-    .token-sheet .sheet-tabs .item {
+    .card-config.sheet nav.sheet-tabs .item,
+    .cards-config.sheet nav.sheet-tabs .item,
+    .scene-sheet.sheet nav.sheet-tabs .item,
+    .active-effect.sheet nav.sheet-tabs .item,
+    .active-effect.sheet nav.sheet-tabs .item,
+    .token-sheet.sheet nav.sheet-tabs .item {
       margin: 3px 0px;
       padding: 4px 3px 1px 3px;
       font-family: var(--actor-input-font-family);
@@ -13289,7 +13218,7 @@ font-family: var(--actor-input-font-family);
     position: unset;
     height: unset;
     background: url(../ui/buttons/combat-button-background.webp);
-    background-position: -4px -2px;
+    background-position: 0px -2px;
     background-repeat: no-repeat;
   }
 
@@ -14306,6 +14235,7 @@ font-style : normal;
   color: #CCC;
 }
 
+.chat-button,
 .apply-effect,
 .invoke-effect,
 .condition-script,
@@ -14328,6 +14258,11 @@ font-style : normal;
   /* position: relative; */
   /* left: 120px; */
   text-align: center;
+}
+
+.apply-conditions {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .apply-effect {
