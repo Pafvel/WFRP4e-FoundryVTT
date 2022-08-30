@@ -1268,12 +1268,18 @@ export default class ItemWfrp4e extends Item {
     let rangeBands = {}
 
     rangeBands[`${game.i18n.localize("Point Blank")}`] = {
-      range: [0, Math.ceil(range / 10)],
+      // @PatrikP begin Point blank range is maximum 4 yards
+      // range: [0, Math.ceil(range / 10)],
+      range: [0, Math.min(Math.ceil(range / 10), 4)],
+      // @PatrikP end
       modifier: game.wfrp4e.config.difficultyModifiers[game.wfrp4e.config.rangeModifiers["Point Blank"]],
       difficulty: game.wfrp4e.config.rangeModifiers["Point Blank"]
     }
     rangeBands[`${game.i18n.localize("Short Range")}`] = {
-      range: [Math.ceil(range / 10) + 1, Math.ceil(range / 2)],
+      // @PatrikP begin
+      // range: [Math.ceil(range / 10) + 1, Math.ceil(range / 2)],
+      range: [Math.min(Math.ceil(range / 10), 4) + 1, Math.ceil(range / 2)],
+      // @PatrikP end
       modifier: game.wfrp4e.config.difficultyModifiers[game.wfrp4e.config.rangeModifiers["Short Range"]],
       difficulty: game.wfrp4e.config.rangeModifiers["Short Range"]
     }
