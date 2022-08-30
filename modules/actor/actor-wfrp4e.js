@@ -2710,7 +2710,10 @@ export default class ActorWfrp4e extends Actor {
         let sizeDiff = this.sizeNum - target.sizeNum
 
         // Attacking a larger creature with melee
-        if (sizeDiff < 0 && (item.attackType == "melee" || target.sizeNum <= 3)) {
+        // @PatrikP begin Bonus for attacking larger creature is only for melee
+        // if (sizeDiff < 0 && (item.attackType == "melee" || target.sizeNum <= 3)) {
+        if (sizeDiff < 0 && (item.attackType == "melee")) {
+        // @PatrikP end
           modifier += 10;
           tooltip.push(game.i18n.localize('CHAT.TestModifiers.AttackingLarger'))
           // Attacking a larger creature with ranged
